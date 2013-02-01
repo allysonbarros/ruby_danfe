@@ -1,4 +1,4 @@
-#enconding: utf-8
+# encoding: utf-8
 require 'rubygems'
 require 'prawn'
 require 'prawn/measurement_extensions'
@@ -322,11 +322,16 @@ module RubyDanfe
     pdf = generatePDF(xml)
     pdf.render_file pdf_filename
   end
-
+  
   def self.render_file(pdf_filename, xml_string)
     xml = XML.new(xml_string)
     pdf = generatePDF(xml)
     pdf.render_file pdf_filename
   end
 
+  def self.generate_from_xml_string(pdf_filename, xml_string)
+    xml = XML.new(xml_string)
+    pdf = generatePDF(xml)
+    pdf.render_file pdf_filename
+  end
 end
